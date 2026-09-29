@@ -1,0 +1,51 @@
+{
+  "name": "auto-typer",
+  "productName": "Auto Typer",
+  "version": "1.0.0",
+  "description": "Free Windows auto typer for Remote Desktop (RDP), VMs and consoles where copy-paste does not work - types your clipboard text as real keystrokes.",
+  "author": "Pasindu Shanuka",
+  "license": "MIT",
+  "homepage": "https://github.com/PShanuKa/Auto-Typer#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PShanuKa/Auto-Typer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PShanuKa/Auto-Typer/issues"
+  },
+  "keywords": [
+    "auto-typer",
+    "autotype",
+    "rdp",
+    "remote-desktop",
+    "clipboard",
+    "paste",
+    "keystroke",
+    "sendinput",
+    "windows",
+    "electron",
+    "vmware",
+    "hyper-v",
+    "virtualbox",
+    "citrix"
+  ],
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder --win --publish never",
+    "pack": "electron-vite build && electron-builder --win --dir",
+    "install-app": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1",
+    "uninstall-app": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/uninstall.ps1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "vite": "^7.3.6"
+  }
+}

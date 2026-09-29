@@ -1,0 +1,27 @@
+appId: io.github.pshanuka.autotyper
+productName: Auto Typer
+copyright: Copyright © 2026 Pasindu Shanuka
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+extraResources:
+  - from: resources/typer.ps1
+    to: typer.ps1
+win:
+  icon: build/icon.png
+  target:
+    - nsis
+    - portable
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Auto Typer
+  # Version-less names keep the README's releases/latest/download links stable.
+  artifactName: Auto-Typer-Setup.exe
+portable:
+  artifactName: Auto-Typer-Portable.exe
