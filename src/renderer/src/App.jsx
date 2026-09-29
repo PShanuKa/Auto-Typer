@@ -114,6 +114,8 @@ export default function App() {
         <p className="credits">
           Developed by <strong>Pasindu Shanuka</strong> · <a href="tel:+94714700007">071 470 0007</a> ·{' '}
           <a href="mailto:shanuka200018@gmail.com">shanuka200018@gmail.com</a>
+          <br />
+          <a href="https://github.com/PShanuKa/Auto-Typer">github.com/PShanuKa/Auto-Typer</a>
         </p>
       </footer>
     </main>
