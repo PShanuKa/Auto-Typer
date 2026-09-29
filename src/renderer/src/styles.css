@@ -220,6 +220,21 @@ button.link {
   padding: 0 0 0 10px;
 }
 
+.credits {
+  margin: 8px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.credits a {
+  color: var(--muted);
+}
+
+.credits a:hover {
+  color: var(--accent);
+}
+
 kbd {
   margin-left: 6px;
   padding: 1px 5px;

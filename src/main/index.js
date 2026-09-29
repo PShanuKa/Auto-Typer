@@ -1,4 +1,4 @@
-import { app, BrowserWindow, clipboard, globalShortcut, ipcMain } from 'electron'
+import { app, BrowserWindow, clipboard, globalShortcut, ipcMain, shell } from 'electron'
 import { spawn } from 'child_process'
 import { randomUUID } from 'crypto'
 import { existsSync, unlinkSync, writeFileSync } from 'fs'
@@ -145,11 +145,30 @@ function createWindow() {
     minWidth: 420,
     minHeight: 520,
     title: 'Auto Typer',
+    // Packaged builds take the icon from the exe; dev mode needs it set explicitly.
+    ...(app.isPackaged ? {} : { icon: join(app.getAppPath(), 'build', 'icon.png') }),
     autoHideMenuBar: true,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       contextIsolation: true,
       nodeIntegration: false
+    }
+  })
+
+  // Contact links (mailto:, tel:, https:) open in the system default app, never inside this window.
+  const openExternal = (url) => {
+    if (/^(mailto|tel|https):/i.test(url)) {
+      shell.openExternal(url)
+    }
+  }
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    openExternal(url)
+    return { action: 'deny' }
+  })
+  mainWindow.webContents.on('will-navigate', (event, url) => {
+    if (url !== mainWindow.webContents.getURL()) {
+      event.preventDefault()
+      openExternal(url)
     }
   })
 

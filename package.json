@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "auto-typer",
   "productName": "Auto Typer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Free Windows auto typer for Remote Desktop (RDP), VMs and consoles where copy-paste does not work - types your clipboard text as real keystrokes.",
   "author": "Pasindu Shanuka",
   "license": "MIT",

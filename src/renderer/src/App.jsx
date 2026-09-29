@@ -111,6 +111,10 @@ export default function App() {
             Start
           </button>
         )}
+        <p className="credits">
+          Developed by <strong>Pasindu Shanuka</strong> · <a href="tel:+94714700007">071 470 0007</a> ·{' '}
+          <a href="mailto:shanuka200018@gmail.com">shanuka200018@gmail.com</a>
+        </p>
       </footer>
     </main>
   )
